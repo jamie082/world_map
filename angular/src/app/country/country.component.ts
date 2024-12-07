@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class CountryComponent {
   @Input() nationId!: string;
-  @Input() nationCapital!: string:
+  @Input() nationCapital!: string;
   @Input() nationRegion!: string;
   @Input() nationIncome!: string;
   @Input() nationLatitude!: string;
@@ -17,6 +17,4 @@ export class CountryComponent {
   constructor() { }
 
   onInit(): void { }
-}
-
 }
