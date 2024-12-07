@@ -17,8 +17,8 @@ export class MapComponent {
 
   ngAfterViewInit() {
     const svgElement = this.elementRef.nativeElement.querySelector("svg");
-    const pathElements = svgElement.querySelectorAll.("path");
-    pathElements.forEach((path: SVGPathElements) => {
+    const pathElements = svgElement.querySelectorAll("path");
+    pathElements.forEach((path: SVGPathElement) => {
     
       pathElements.addEventListener("click", this.handleClick.bind(this));
       });
@@ -50,9 +50,9 @@ handleClick(event: MouseEvent) { // handle and create a mouse event
 
     this.fromIDChoose.emit(name);
     this.fromCapitalChoose.emit(capitalCity);
-    this.RegionChoose.emit(region);
-    this.IncomeChoose.emit(income);
-    this.LatitudeChoose.emit(latitude);
+    this.fromRegionChoose.emit(region);
+    this.fromIncomeChoose.emit(income);
+    this.fromLatitudeChoose.emit(latitude);
     this.fromLongitudeChoose.emit(longitude);
   });
 }
