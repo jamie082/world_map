@@ -1,25 +1,25 @@
 <div class="row">
   <div class="first column"></div>
   <div>
-    <world-map-here
+    <map-component
     (IDElect)="fromIDChoose = $event"
     (CapitalElect)="fromCapitalChoose = $event"
     (RegionElect)="fromRegionChoose = $event"
     (IncomeElect)="fromIncomeChoose = $event"
     (LatitudeElect)="fromLatitudeChoose = $event"
     (LongitudeElect)="fromLongitudeChoose = $event"
-    ></world-map-here>
+    ></map-component>
 
 
   </div>
   <div class="second column"></div>
     <table>
-      <mod-info
+      <app-country
       [nationId]="fromIDChoose"
       [nationCapital]="fromCapitalChoose"
       [nationIncome]="fromIncomeChoose"
       [nationLatitude]="fromLatitudeChoose"
       [nationLongitude]="fromLongitudeChoose"
-      ></mod-info>
+      ></app-country>
     </table>
 </div>
