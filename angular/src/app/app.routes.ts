@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { MapComponent } from './map/map.component';
 
 export const routes: Routes = [];
-    { path: 'index', components: AppComponent }}
+    { path: 'index', components: MapComponent }}
