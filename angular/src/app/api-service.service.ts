@@ -9,7 +9,7 @@ export class ApiServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getCountryData(countryID: string): Observable<User> {
+  getCountryData(nationId: string): Observable<any> {
     const my_url = `http://api.worldbank.org/v2/country/${nationId}?format=json`;
 
     return this.http.get<any>(my_url);

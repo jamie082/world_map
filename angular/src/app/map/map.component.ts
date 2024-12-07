@@ -1,6 +1,7 @@
-import { Component, Output } from '@angular/core';
-import { ElementRef, Output, EventEmitter, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, Output, ElementRef } from '@angular/core';
+import { EventEmitter, AfterViewInit, ViewChild } from '@angular/core';
 import { CountryComponent } from '../country/country.component';
+import { ApiServiceService } from '../api-service.service';
 
 @Component({
   selector: 'app-map',
@@ -11,16 +12,17 @@ import { CountryComponent } from '../country/country.component';
 export class MapComponent {
 
   constructor (
-    private componentRef: ComponentRef,
-    private GLOBALAPISERVICE: GlobalAPIService ) { }
+    private elementRef: ElementRef,
+    private GlobalAPIService: ApiServiceService ) { }
 
-  isInteropObservable() {
-    const svgElement = this.elementRef.nativeElemet.querySelector("svg");
+  ngAfterViewInit() {
+    const svgElement = this.elementRef.nativeElement.querySelector("svg");
     const pathElements = svgElement.querySelectorAll.("path");
-
+    pathElements.forEach((path: SVGPathElements) => {
+    
       pathElements.addEventListener("click", this.handleClick.bind(this));
-    });
-  }
+      });
+    }
 
 @Output() fromIDChoose = new EventEmitter<string>();
 @Output() fromCapitalChoose = new EventEmitter<string>();

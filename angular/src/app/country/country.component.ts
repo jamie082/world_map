@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-country',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './country.component.html',
   styleUrl: './country.component.css'
 })
-export class CountryComponent {
+export class CountryComponent implements OnInit {
   @Input() nationId!: string;
   @Input() nationCapital!: string;
   @Input() nationRegion!: string;
@@ -16,5 +16,5 @@ export class CountryComponent {
 
   constructor() { }
 
-  onInit(): void { }
+  ngOnInit(): void { }
 }
